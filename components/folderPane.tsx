@@ -10,6 +10,8 @@ const FolderPane: FC<{ folder: any; docs: any[] }> = ({ folder, docs }) => {
   const [isShown, setIsShown] = useState(false)
   const [allDocs, setDocs] = useState(docs || [])
 
+  console.log('Documents:', allDocs)
+
   const handleNewDoc = async (name: string) => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/api/doc/`, {
       method: 'POST',
